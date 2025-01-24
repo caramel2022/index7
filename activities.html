@@ -13,7 +13,7 @@
             padding: 0;
         }
         
-        body, html {
+        html, body {
             height: 100%;
             font-family: 'Tajawal', sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -98,18 +98,46 @@
             background: linear-gradient(to right, #9C27B0, #E040FB); 
         }
         
-        @media (max-width: 768px) {
-            .activities-grid {
-                grid-template-columns: 1fr;
+        @media screen and (max-width: 1024px) {
+            .container {
+                width: 95%;
+                padding: 30px;
             }
             
             .title {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            
+            .activities-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+            
+            .activity-btn {
+                font-size: 1.3rem;
+                padding: 25px 35px;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 98%;
+                padding: 20px;
+            }
+            
+            .title {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+            
+            .activities-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
             
             .activity-btn {
                 font-size: 1.2rem;
-                padding: 25px 35px;
+                padding: 20px 30px;
             }
         }
     </style>
@@ -133,40 +161,6 @@
             transition: all 0.3s ease;
             margin-top: 30px;
         ">العودة للصفحة الرئيسية</button>
-    </div>
-    <script>
-        function openReadingActivitiesPage() {
-            // Create a new div for reading activities
-            const readingActivitiesDiv = document.createElement('div');
-            readingActivitiesDiv.id = 'reading-activities';
-            readingActivitiesDiv.innerHTML = `
-                <div class="container">
-                    <h1 class="title">أنشطة القراءة</h1>
-                    <div class="activities-grid">
-                        <button class="activity-btn" onclick="openStory('ليلة بلا نور')">ليلة بلا نور</button>
-                    </div>
-                    <button class="back-btn" onclick="closeReadingActivities()">العودة</button>
-                </div>
-            `;
-            
-            // Hide the main container and append the new div
-            document.querySelector('.container').style.display = 'none';
-            document.body.appendChild(readingActivitiesDiv);
-        }
-
-        function openStory(storyTitle) {
-            // Redirect to stories.html with the story title as a parameter
-            window.location.href = `stories.html?story=${encodeURIComponent(storyTitle)}`;
-        }
-
-        function closeReadingActivities() {
-            // Remove the reading activities div and show the main container
-            const readingActivitiesDiv = document.getElementById('reading-activities');
-            if (readingActivitiesDiv) {
-                readingActivitiesDiv.remove();
-            }
-            document.querySelector('.container').style.display = 'block';
-        }
-    </script>
+    
 </body>
 </html>

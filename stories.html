@@ -2,8 +2,9 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>حكاياتي</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
         
@@ -13,13 +14,13 @@
             padding: 0;
         }
         
-        body, html {
+        html, body {
             height: 100%;
             font-family: 'Tajawal', sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             background-image: 
                 linear-gradient(135deg, rgba(195, 207, 226, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%),
-                url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Cpath d="M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM50 90c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40-40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM10 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM10 90c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40-40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+                url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Cpath d="M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM50 90c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40-40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM10 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM10 90c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40-40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10z"/%3E%3C/g%3E%3C/svg%3E');
             display: flex;
             justify-content: center;
             align-items: center;
@@ -59,7 +60,6 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             width: 30%;
             text-align: center;
-            margin-bottom: 20px;
         }
         
         .story-text h2 {
@@ -88,88 +88,221 @@
             background-color: #45a049;
         }
         
-        @media (max-width: 768px) {
-            .stories-grid {
-                flex-direction: column;
-            }
-            
-            .story-text {
-                width: 90%;
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            margin-top: 20px;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .top-return-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+        }
+        
+        .story-card {
+            margin-bottom: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .story-card:hover {
+            transform: scale(1.02);
+        }
+        .story-card .card-header {
+            background-color: #2575fc;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        .story-card .card-body {
+            padding: 0;
+        }
+        .story-card iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+        
+        .page-title {
+            font-family: 'Tajawal', sans-serif;
+            text-align: center;
+            color: #2c3e50;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+            position: relative;
+            padding: 10px 0;
+        }
+        .page-title::before,
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+        }
+        .page-title::before {
+            bottom: -5px;
+        }
+        .page-title::after {
+            bottom: -10px;
+            width: 50px;
+        }
+        
+        @media screen and (max-width: 1024px) {
+            .container {
+                width: 95%;
+                padding: 30px;
             }
             
             .title {
+                font-size: 2.2rem;
+            }
+            
+            .stories-grid {
+                gap: 15px;
+            }
+            
+            .story-text {
+                width: 45%;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 98%;
+                padding: 20px;
+            }
+            
+            .title {
+                font-size: 1.8rem;
+                margin-bottom: 25px;
+            }
+            
+            .stories-grid {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .story-text {
+                width: 100%;
+            }
+            
+            .story-text h2 {
+                font-size: 1.1rem;
+            }
+            
+            .story-text iframe {
+                height: 200px;
+            }
+        }
+        
+        @media screen and (max-width: 768px) {
+            .page-title {
                 font-size: 2rem;
+            }
+            
+            .story-card {
+                margin-bottom: 20px;
+            }
+            
+            .story-card iframe {
+                height: 250px;
+            }
+            
+            .top-return-btn {
+                position: relative;
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .page-title {
+                font-size: 1.5rem;
+            }
+            
+            .story-card iframe {
+                height: 200px;
             }
         }
     </style>
 </head>
 <body>
+    <a href="activities.html" class="btn btn-secondary top-return-btn">
+        العودة
+    </a>
     <div class="container">
-        <h1 class="title">حكاياتي</h1>
-        <div class="stories-grid">
-            <div class="story-text">
-                <h2>الوحدة 1-الأسبوع3 -المطر ينزل</h2>
-                <iframe src="https://www.youtube.com/embed/qZTsLw7sJDQ" frameborder="0" allowfullscreen></iframe>
+        <h1 class="page-title">حكاياتي</h1>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card story-card">
+                    <div class="card-header">
+                        الوحدة الاولى -الاسبوع2 -المطر ينزل
+                    </div>
+                    <div class="card-body">
+                        <iframe src="https://www.youtube.com/embed/qZTsLw7sJDQ" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-            <div class="story-text">
-                <h2>الوحدة1-الاسبوع3 -سر الصداقة</h2>
-                <iframe src="https://www.youtube.com/embed/cbhS8jSHN64" frameborder="0" allowfullscreen></iframe>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card story-card">
+                    <div class="card-header">
+                        الوحدة1 الاسبوع3 سر الصداقة
+                    </div>
+                    <div class="card-body">
+                        <iframe src="https://www.youtube.com/embed/cbhS8jSHN64" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
-            <div class="story-text">
-                <h2>الوحدة 1- الاسبوع 3 - أنامل جدتي</h2>
-                <iframe src="https://www.youtube.com/embed/uiEyiGXF0D8" frameborder="0" allowfullscreen></iframe>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card story-card">
+                    <div class="card-header">
+                        الوحدة 1 -الاسبوع3 -أنامل جدتي
+                    </div>
+                    <div class="card-body">
+                        <iframe src="https://www.youtube.com/embed/uiEyiGXF0D8" allowfullscreen></iframe>
+                    </div>
+                </div>
             </div>
         </div>
-        <a href="activities.html" class="return-btn">العودة لأنشطتي المدرسية</a>
-        <button onclick="window.location.href='index.html'" style="
-            background-color: #2575fc;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 1rem;
-            margin-top: 30px;
-        ">العودة للصفحة الرئيسية</button>
     </div>
 
-    <script>
-        // Function to get URL parameters
-        function getUrlParameter(name) {
-            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
-            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
-            var results = regex.exec(location.search);
-            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
-        }
+    <div class="container mt-4" style="display:none;">
+        <div class="row">
+            <div class="col-12 text-center">
+                <a href="activities.html" class="btn btn-secondary">العودة لأنشطتي المدرسية</a>
+            </div>
+        </div>
+    </div>
 
-        // Story content dictionary
-        const stories = {
-            'ليلة بلا نور': `
-                <div class="story-content">
-                    <h2>ليلة بلا نور</h2>
-                    <p>كانت الليلة مظلمة تماماً، لا يوجد أي ضوء يخترق سواد الليل. جلست في غرفتي أتأمل الظلام من حولي...</p>
-                    <p>استمر السرد هنا...</p>
-                </div>
-            `
-        };
-
-        // Load story content when the page loads
-        window.onload = function() {
-            const storyTitle = getUrlParameter('story');
-            const storyContainer = document.querySelector('.container');
-            
-            if (storyTitle && stories[storyTitle]) {
-                // Update page title
-                document.title = storyTitle;
-                
-                // Replace container content with story
-                storyContainer.innerHTML = `
-                    <h1 class="title">${storyTitle}</h1>
-                    ${stories[storyTitle]}
-                    <button onclick="window.location.href='activities.html'" class="back-btn">العودة</button>
-                `;
-            }
-        }
-    </script>
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
