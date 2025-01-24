@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>قصصي التعليمية</title>
+    <title>حكاياتي</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         html, body {
             max-width: 100%;
@@ -50,6 +51,10 @@
             margin-bottom: 15px;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .story-card:hover {
+            transform: scale(1.02);
         }
         .story-card .card-header {
             font-size: 1rem;
@@ -63,7 +68,6 @@
             position: relative;
             padding-top: 56.25%; /* 16:9 aspect ratio */
             overflow: hidden;
-            cursor: pointer;
         }
         .story-card iframe {
             position: absolute;
@@ -73,13 +77,47 @@
             height: 100%;
             object-fit: cover;
         }
-        .top-return-btn {
-            position: fixed;
-            top: 10px;
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        .video-overlay:hover {
+            background: rgba(0,0,0,0.7);
+        }
+        .play-icon {
+            color: white;
+            font-size: 3rem;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        .play-icon:hover {
+            opacity: 1;
+        }
+        .fullscreen-btn {
+            position: absolute;
+            bottom: 10px;
             right: 10px;
-            z-index: 1000;
-            padding: 8px 12px;
-            font-size: 0.9rem;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            z-index: 20;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .story-card:hover .fullscreen-btn {
+            opacity: 1;
         }
         @media screen and (min-width: 768px) {
             .container {
@@ -97,6 +135,11 @@
                 font-size: 2.5rem;
             }
         }
+        @media screen and (max-width: 768px) {
+            .story-card .card-body {
+                padding-top: 75%; /* Adjust aspect ratio for smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
@@ -107,74 +150,53 @@
         <h1 class="page-title">حكاياتي</h1>
         <div class="row">
             <div class="col-md-6">
-                <div class="card story-card">
+                <div class="card story-card video-container">
                     <div class="card-header">
                         الوحدة الأولى - الأسبوع الثاني: المطر ينزل
                     </div>
                     <div class="card-body">
-                        <iframe src="https://www.youtube.com/embed/qZTsLw7sJDQ" allowfullscreen></iframe>
+                        <div class="video-overlay">
+                            <span class="play-icon">▶</span>
+                        </div>
+                        <iframe src="https://www.youtube.com/embed/qZTsLw7sJDQ?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+                        <button class="fullscreen-btn" onclick="toggleFullScreen(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card story-card">
+                <div class="card story-card video-container">
                     <div class="card-header">
                         الوحدة الأولى - الأسبوع الثالث: أنامل جدتي
                     </div>
                     <div class="card-body">
-                        <iframe src="https://www.youtube.com/embed/uiEyiGXF0D8" allowfullscreen></iframe>
+                        <div class="video-overlay">
+                            <span class="play-icon">▶</span>
+                        </div>
+                        <iframe src="https://www.youtube.com/embed/uiEyiGXF0D8?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+                        <button class="fullscreen-btn" onclick="toggleFullScreen(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row mt-4">
             <div class="col-md-6 offset-md-3">
-                <div class="card story-card">
+                <div class="card story-card video-container">
                     <div class="card-header">
                         الوحدة الأولى - الأسبوع الثالث: سر الصداقة
                     </div>
                     <div class="card-body">
-                        <iframe src="https://www.youtube.com/embed/cbhS8jSHN64" allowfullscreen></iframe>
+                        <div class="video-overlay">
+                            <span class="play-icon">▶</span>
+                        </div>
+                        <iframe src="https://www.youtube.com/embed/cbhS8jSHN64?enablejsapi=1" frameborder="0" allowfullscreen></iframe>
+                        <button class="fullscreen-btn" onclick="toggleFullScreen(this)">
+                            <i class="fas fa-expand"></i>
+                        </button>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="container mt-4" style="display:none;">
-        <div class="row">
-            <div class="col-12 text-center">
-                <a href="activities.html" class="btn btn-secondary">العودة لأنشطتي المدرسية</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Video Modals -->
-    <div class="modal fade modal-video" id="videoModal1" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body p-0">
-                    <iframe src="https://www.youtube.com/embed/qZTsLw7sJDQ?autoplay=1" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade modal-video" id="videoModal2" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body p-0">
-                    <iframe src="https://www.youtube.com/embed/uiEyiGXF0D8?autoplay=1" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade modal-video" id="videoModal3" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-body p-0">
-                    <iframe src="https://www.youtube.com/embed/cbhS8jSHN64?autoplay=1" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -182,24 +204,72 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Add click event to first video card
-            document.querySelector('.story-card:nth-child(1) .card-body').addEventListener('click', function() {
-                var modal = new bootstrap.Modal(document.getElementById('videoModal1'));
-                modal.show();
-            });
-
-            // Add click event to second video card
-            document.querySelector('.story-card:nth-child(2) .card-body').addEventListener('click', function() {
-                var modal = new bootstrap.Modal(document.getElementById('videoModal2'));
-                modal.show();
-            });
-
-            // Add click event to third video card
-            document.querySelector('.story-card:nth-child(3) .card-body').addEventListener('click', function() {
-                var modal = new bootstrap.Modal(document.getElementById('videoModal3'));
-                modal.show();
+            const videoContainers = document.querySelectorAll('.video-container');
+            
+            videoContainers.forEach(container => {
+                const iframe = container.querySelector('iframe');
+                const overlay = container.querySelector('.video-overlay');
+                const playIcon = overlay.querySelector('.play-icon');
+                
+                // Ensure YouTube API is enabled
+                if (!iframe.src.includes('enablejsapi=1')) {
+                    iframe.src += (iframe.src.includes('?') ? '&' : '?') + 'enablejsapi=1';
+                }
+                
+                // Soft play functionality
+                playIcon.addEventListener('click', function(event) {
+                    event.stopPropagation(); // Prevent event bubbling
+                    
+                    // Gently fade out overlay
+                    overlay.style.opacity = '0';
+                    setTimeout(() => {
+                        overlay.style.display = 'none';
+                    }, 300);
+                    
+                    // Play video
+                    try {
+                        iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                    } catch(e) {
+                        console.error('Error playing video:', e);
+                    }
+                });
             });
         });
+
+        // Fullscreen functionality with smooth transitions
+        function toggleFullScreen(btn) {
+            const cardBody = btn.closest('.card-body');
+            const iframe = cardBody.querySelector('iframe');
+            const fullscreenIcon = btn.querySelector('i');
+            
+            const enterFullscreen = () => {
+                if (cardBody.requestFullscreen) {
+                    cardBody.requestFullscreen();
+                } else if (cardBody.mozRequestFullScreen) {
+                    cardBody.mozRequestFullScreen();
+                } else if (cardBody.webkitRequestFullscreen) {
+                    cardBody.webkitRequestFullscreen();
+                } else if (cardBody.msRequestFullscreen) {
+                    cardBody.msRequestFullscreen();
+                }
+                fullscreenIcon.classList.replace('fa-expand', 'fa-compress');
+            };
+
+            const exitFullscreen = () => {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                fullscreenIcon.classList.replace('fa-compress', 'fa-expand');
+            };
+
+            document.fullscreenElement ? exitFullscreen() : enterFullscreen();
+        }
     </script>
 
     <!-- Bootstrap JS and Popper.js -->

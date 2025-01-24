@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>التمارين</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+        body {
+            background-color: #f4f6f9;
+            direction: rtl;
+            font-family: 'Cairo', 'Tajawal', Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            max-width: 100%;
+            padding: 15px;
+            margin: 0;
+            background-color: white;
+            box-shadow: none;
+            border-radius: 0;
+        }
+        .page-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #2c3e50;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        .row {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+        }
+        .col-md-6 {
+            width: 100%;
+            margin: 0 0 15px 0;
+            padding: 0;
+        }
+        .exercise-card {
+            margin-bottom: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .exercise-card:hover {
+            transform: scale(1.02);
+        }
+        .exercise-card .card-header {
+            font-size: 1rem;
+            padding: 10px 15px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .exercise-card .card-header i {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+        .exercise-card:nth-child(1) .card-header { background-color: #3498db; }
+        .exercise-card:nth-child(2) .card-header { background-color: #2980b9; }
+        .exercise-card:nth-child(3) .card-header { background-color: #2c3e50; }
+        .exercise-card:nth-child(4) .card-header { background-color: #34495e; }
+        .exercise-card:nth-child(5) .card-header { background-color: #2c3e50; }
+        .exercise-card:nth-child(6) .card-header { background-color: #34495e; }
+        .exercise-card .card-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .exercise-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .exercise-btn i {
+            margin-left: 10px;
+            font-size: 1.2rem;
+        }
+        .exercise-card:nth-child(1) .exercise-btn { 
+            background-color: #2575fc; 
+        }
+        .exercise-card:nth-child(2) .exercise-btn { 
+            background-color: #3498db; 
+        }
+        .exercise-card:nth-child(3) .exercise-btn { 
+            background-color: #2980b9; 
+        }
+        .exercise-card:nth-child(4) .exercise-btn { 
+            background-color: #34495e; 
+        }
+        .exercise-card:nth-child(5) .exercise-btn { 
+            background-color: #2c3e50; 
+        }
+        .exercise-card:nth-child(6) .exercise-btn { 
+            background-color: #2c3e50; 
+        }
+        .exercise-btn:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+        @media screen and (min-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            .row {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .col-md-6 {
+                width: calc(50% - 15px);
+                margin: 0 7.5px 15px;
+            }
+            .page-title {
+                font-size: 2.5rem;
+            }
+        }
+        .top-return-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 10;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="activities.html" class="btn btn-secondary top-return-btn">
+        العودة
+    </a>
+    <div class="container">
+        <h1 class="page-title">التمارين</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card exercise-card">
+                    <div class="card-header">
+                        <i class="fas fa-handshake"></i>
+                        اسلوب التسامح
+                    </div>
+                    <div class="card-body">
+                        <button class="exercise-btn" onclick="startExercise('tolerance')">
+                            ابدأ التمارين
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card exercise-card">
+                    <div class="card-header">
+                        <i class="fas fa-sorry"></i>
+                        أسلوب الاعتذار
+                    </div>
+                    <div class="card-body">
+                        <button class="exercise-btn" onclick="startExercise('apology')">
+                            ابدأ التمارين
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card exercise-card">
+                    <div class="card-header">
+                        <i class="fas fa-font"></i>
+                        التاء المربوطة والمبسوطة
+                    </div>
+                    <div class="card-body">
+                        <button class="exercise-btn" onclick="startExercise('ta')">
+                            ابدأ التمارين
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card exercise-card">
+                    <div class="card-header">
+                        <i class="fas fa-quote-right"></i>
+                        همزتا القطع والوصل
+                    </div>
+                    <div class="card-body">
+                        <button class="exercise-btn" onclick="startExercise('hamza')">
+                            ابدأ التمارين
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card exercise-card">
+                    <div class="card-header">
+                        <i class="fas fa-history"></i>
+                        الفعل الماضي
+                    </div>
+                    <div class="card-body">
+                        <button class="exercise-btn" onclick="startExercise('past-tense')">
+                            ابدأ التمارين
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card exercise-card">
+                    <div class="card-header">
+                        <i class="fas fa-link"></i>
+                        أدوات الربط
+                    </div>
+                    <div class="card-body">
+                        <button class="exercise-btn" onclick="startExercise('linking-tools')">
+                            ابدأ التمارين
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function startExercise(exerciseType) {
+        // Navigate to the specific exercise page
+        switch(exerciseType) {
+            case 'tolerance':
+                window.location.href = 'tolerance_exercises.html';
+                break;
+            case 'apology':
+                window.location.href = 'apology_exercises.html';
+                break;
+            case 'ta':
+                window.location.href = 'ta_exercises.html';
+                break;
+            case 'hamza':
+                window.location.href = 'hamza_exercises.html';
+                break;
+            case 'past-tense':
+                window.location.href = 'past_tense_exercises.html';
+                break;
+            case 'linking-tools':
+                window.location.href = 'linking_tools_exercises.html';
+                break;
+            default:
+                alert('التمرين غير موجود');
+        }
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
