@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حكاياتي</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body, html {
+            height: 100%;
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-image: 
+                linear-gradient(135deg, rgba(195, 207, 226, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%),
+                url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Cpath d="M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM50 90c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40-40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM10 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM10 90c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40-40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+        }
+        
+        .title {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .stories-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .story-text {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            width: 30%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .story-text h2 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .story-text iframe {
+            width: 100%;
+            height: 250px;
+        }
+        
+        .return-btn {
+            display: block;
+            margin: 20px auto;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .return-btn:hover {
+            background-color: #45a049;
+        }
+        
+        @media (max-width: 768px) {
+            .stories-grid {
+                flex-direction: column;
+            }
+            
+            .story-text {
+                width: 90%;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">حكاياتي</h1>
+        <div class="stories-grid">
+            <div class="story-text">
+                <h2>الوحدة 1-الأسبوع3 -المطر ينزل</h2>
+                <iframe src="https://www.youtube.com/embed/qZTsLw7sJDQ" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="story-text">
+                <h2>الوحدة1-الاسبوع3 -سر الصداقة</h2>
+                <iframe src="https://www.youtube.com/embed/cbhS8jSHN64" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="story-text">
+                <h2>الوحدة 1- الاسبوع 3 - أنامل جدتي</h2>
+                <iframe src="https://www.youtube.com/embed/uiEyiGXF0D8" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+        <a href="activities.html" class="return-btn">العودة لأنشطتي المدرسية</a>
+        <button onclick="window.location.href='index.html'" style="
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 30px;
+        ">العودة للصفحة الرئيسية</button>
+    </div>
+
+    <script>
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Story content dictionary
+        const stories = {
+            'ليلة بلا نور': `
+                <div class="story-content">
+                    <h2>ليلة بلا نور</h2>
+                    <p>كانت الليلة مظلمة تماماً، لا يوجد أي ضوء يخترق سواد الليل. جلست في غرفتي أتأمل الظلام من حولي...</p>
+                    <p>استمر السرد هنا...</p>
+                </div>
+            `
+        };
+
+        // Load story content when the page loads
+        window.onload = function() {
+            const storyTitle = getUrlParameter('story');
+            const storyContainer = document.querySelector('.container');
+            
+            if (storyTitle && stories[storyTitle]) {
+                // Update page title
+                document.title = storyTitle;
+                
+                // Replace container content with story
+                storyContainer.innerHTML = `
+                    <h1 class="title">${storyTitle}</h1>
+                    ${stories[storyTitle]}
+                    <button onclick="window.location.href='activities.html'" class="back-btn">العودة</button>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>

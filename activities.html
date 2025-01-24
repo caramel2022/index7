@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أنشطتي المدرسية</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body, html {
+            height: 100%;
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-image: 
+                linear-gradient(135deg, rgba(195, 207, 226, 0.3) 0%, rgba(255, 255, 255, 0.3) 100%),
+                url('data:image/svg+xml,%3Csvg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Cpath d="M50 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM50 90c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40-40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM10 50c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM10 90c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40-40c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zM10 10c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10zm40 0c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10c-5.523 0-10-4.477-10-10z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            padding: 40px;
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+        }
+        
+        .title {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .activity-btn {
+            font-size: 1.5rem;
+            padding: 30px 40px;
+            border: none;
+            border-radius: 20px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .activity-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .activity-btn:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+        }
+        
+        .activity-btn:hover::before {
+            opacity: 1;
+        }
+        
+        .activity-btn:nth-child(1) { 
+            background: linear-gradient(to right, #FF6B6B, #FF8E53); 
+        }
+        
+        .activity-btn:nth-child(2) { 
+            background: linear-gradient(to right, #4ECDC4, #45B7D1); 
+        }
+        
+        .activity-btn:nth-child(3) { 
+            background: linear-gradient(to right, #9C27B0, #E040FB); 
+        }
+        
+        @media (max-width: 768px) {
+            .activities-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .activity-btn {
+                font-size: 1.2rem;
+                padding: 25px 35px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">أنشطتي المدرسية</h1>
+        <div class="activities-grid">
+            <button class="activity-btn" onclick="window.location.href='stories.html'">حكاياتي</button>
+            <button class="activity-btn" onclick="window.location.href='arabic_hamza_exercise.html'">التمارين</button>
+            <button class="activity-btn" onclick="openReadingActivitiesPage()">نصوصي القرائية</button>
+        </div>
+        <button onclick="window.location.href='index.html'" style="
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        ">العودة للصفحة الرئيسية</button>
+    </div>
+    <script>
+        function openReadingActivitiesPage() {
+            // Create a new div for reading activities
+            const readingActivitiesDiv = document.createElement('div');
+            readingActivitiesDiv.id = 'reading-activities';
+            readingActivitiesDiv.innerHTML = `
+                <div class="container">
+                    <h1 class="title">أنشطة القراءة</h1>
+                    <div class="activities-grid">
+                        <button class="activity-btn" onclick="openStory('ليلة بلا نور')">ليلة بلا نور</button>
+                    </div>
+                    <button class="back-btn" onclick="closeReadingActivities()">العودة</button>
+                </div>
+            `;
+            
+            // Hide the main container and append the new div
+            document.querySelector('.container').style.display = 'none';
+            document.body.appendChild(readingActivitiesDiv);
+        }
+
+        function openStory(storyTitle) {
+            // Redirect to stories.html with the story title as a parameter
+            window.location.href = `stories.html?story=${encodeURIComponent(storyTitle)}`;
+        }
+
+        function closeReadingActivities() {
+            // Remove the reading activities div and show the main container
+            const readingActivitiesDiv = document.getElementById('reading-activities');
+            if (readingActivitiesDiv) {
+                readingActivitiesDiv.remove();
+            }
+            document.querySelector('.container').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

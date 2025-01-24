@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تمارين المستوى الثالث عربية - المدرسة الرائدة</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700&display=swap');
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px 60px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            max-width: 800px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        h1 {
+            color: #2575fc;
+            font-size: 2.5rem;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            color: #6a11cb;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        
+        .login-btn {
+            background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .login-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+        }
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            .container {
+                padding: 30px 20px;
+            }
+            .login-btn {
+                font-size: 1rem;
+                padding: 10px 25px;
+            }
+        }
+    </style>
+    <script>
+        function openActivitiesPage() {
+            window.location.href = 'activities.html';
+        }
+        
+        function openStoriesPage() {
+            window.location.href = 'stories.html';
+        }
+        
+        function closeCurrentPage() {
+            if (window.opener) {
+                window.close();
+            } else {
+                history.back();
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>تمارين المستوى الثالث عربية - المدرسة الرائدة</h1>
+        <div class="subtitle">مدرسة ابن خلدون - تطوان</div>
+        <button class="login-btn" onclick="openActivitiesPage()">دخول</button>
+    </div>
+</body>
+</html>
