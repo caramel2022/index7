@@ -131,12 +131,18 @@
             text-align: center;
         }
         .story-card .card-body {
-            padding: 0;
+            position: relative;
+            padding-top: 100%; /* 1:1 aspect ratio */
+            overflow: hidden;
+            cursor: pointer;
         }
         .story-card iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            height: 300px;
-            border: none;
+            height: 100%;
+            object-fit: cover;
         }
         
         .page-title {
@@ -171,6 +177,32 @@
         .page-title::after {
             bottom: -10px;
             width: 50px;
+        }
+        
+        .modal-video {
+            background: rgba(0,0,0,0.9);
+        }
+        .modal-video .modal-dialog {
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-video .modal-content {
+            background: transparent;
+            border: none;
+            width: 90%;
+            max-width: 1200px;
+            height: 80vh;
+        }
+        .modal-video iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         
         @media screen and (max-width: 1024px) {
@@ -261,7 +293,7 @@
     <div class="container">
         <h1 class="page-title">حكاياتي</h1>
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-md-6 col-sm-12">
                 <div class="card story-card">
                     <div class="card-header">
                         الوحدة الاولى -الاسبوع2 -المطر ينزل
@@ -271,7 +303,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-md-6 col-sm-12">
                 <div class="card story-card">
                     <div class="card-header">
                         الوحدة1 الاسبوع3 سر الصداقة
@@ -281,7 +313,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12">
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6 col-sm-12">
                 <div class="card story-card">
                     <div class="card-header">
                         الوحدة 1 -الاسبوع3 -أنامل جدتي
@@ -301,6 +335,59 @@
             </div>
         </div>
     </div>
+
+    <!-- Video Modals -->
+    <div class="modal fade modal-video" id="videoModal1" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <iframe src="https://www.youtube.com/embed/qZTsLw7sJDQ?autoplay=1" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-video" id="videoModal2" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <iframe src="https://www.youtube.com/embed/cbhS8jSHN64?autoplay=1" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-video" id="videoModal3" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <iframe src="https://www.youtube.com/embed/uiEyiGXF0D8?autoplay=1" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to first video card
+            document.querySelector('.story-card:nth-child(1) .card-body').addEventListener('click', function() {
+                var modal = new bootstrap.Modal(document.getElementById('videoModal1'));
+                modal.show();
+            });
+
+            // Add click event to second video card
+            document.querySelector('.story-card:nth-child(2) .card-body').addEventListener('click', function() {
+                var modal = new bootstrap.Modal(document.getElementById('videoModal2'));
+                modal.show();
+            });
+
+            // Add click event to third video card
+            document.querySelector('.story-card:nth-child(3) .card-body').addEventListener('click', function() {
+                var modal = new bootstrap.Modal(document.getElementById('videoModal3'));
+                modal.show();
+            });
+        });
+    </script>
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
